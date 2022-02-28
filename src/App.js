@@ -60,14 +60,14 @@ class App extends Component {
           value={this.state.name}
           number={this.state.number}
           onSubmit={this.addContact}
-        ></ContactForm>
+        />
         <h2>Contacts</h2>
-        <Filter value={this.state.filter} onChange={this.handleFilter}></Filter>
+        <Filter value={this.state.filter} onChange={this.handleFilter} />
         <ContactList
           list={this.state.contacts}
           filter={this.state.filter}
           onClick={this.deleteContact}
-        ></ContactList>
+        />
       </div>
     );
   }

@@ -13,7 +13,7 @@ function ContactList({ list, filter, onClick }) {
     .map(contact => (
       <li key={nanoid()}>
         {contact.name}:{contact.number}
-        <Button type="button" label="Delete" onClick={() => onClick(contact.id)}></Button>
+        <Button type="button" label="Delete" onClick={() => onClick(contact.id)} />
       </li>
     ));
 
