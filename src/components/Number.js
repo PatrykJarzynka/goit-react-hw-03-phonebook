@@ -9,6 +9,10 @@ const FancyInput = styled.input({
 });
 
 function Number({ number, onChange }) {
+  const handleClick = e => {
+    e.target.value = '';
+  };
+
   return (
     <FancyInput
       type="tel"
@@ -18,6 +22,7 @@ function Number({ number, onChange }) {
       required
       number={number}
       onChange={onChange}
+      onClick={handleClick}
     />
   );
 }
