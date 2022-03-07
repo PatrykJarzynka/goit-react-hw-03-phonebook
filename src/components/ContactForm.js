@@ -26,6 +26,7 @@ class ContactForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit(this.state.name, this.state.number);
+    this.setState({ name: '', number: '' });
   };
 
   handleChange = event => {
@@ -37,7 +38,7 @@ class ContactForm extends Component {
     return (
       <FancyForm onSubmit={this.handleSubmit}>
         <StyledSpan>Name</StyledSpan>
-        <Name type="text" value={this.state.name} onChange={this.handleChange} />
+        <Name type="text" name={this.state.name} onChange={this.handleChange} />
         <StyledSpan>Number</StyledSpan>
         <Number type="tel" number={this.state.number} onChange={this.handleChange} />
         <Button type="submit" label={'Add contact'} />

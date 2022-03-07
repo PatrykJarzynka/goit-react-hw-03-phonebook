@@ -24,7 +24,7 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevState) {
     const actuallContacts = this.state.contacts;
     const prevContacts = prevState.contacts;
 
@@ -44,7 +44,7 @@ class App extends Component {
       alert(name + ' is already in contacts');
       return;
     }
-    this.setState(({ contacts }) => ({ contacts: [contact, ...contacts], name: '', number: '' }));
+    this.setState(({ contacts }) => ({ contacts: [contact, ...contacts]}));
   };
 
   handleFilter = event => {
